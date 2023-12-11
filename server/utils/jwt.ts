@@ -7,13 +7,13 @@ interface ITokenOptions {
     expires: Date;
     maxAge: number;
     httpOnly: boolean;
-    sameSite: 'lax' | 'strict' | undefined;
+    sameSite: 'lax' | 'strict' | 'none' | undefined;
     secure?: boolean;
 }
 
 export const sendToken = (user: IUser, statusCode: number, res: Response) => {
-    const accessToken = user.signAccessToken();
-    const refreshToken = user.signRefreshToken();
+    const accessToken = user.SignAccessToken();
+    const refreshToken = user.SignRefreshToken();
 
     // upload session to redis
     redis.set(user._id, JSON.stringify(user) as any);

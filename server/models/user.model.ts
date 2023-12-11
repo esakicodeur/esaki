@@ -17,8 +17,8 @@ export interface IUser extends Document {
     isVerified: boolean;
     courses: Array<{courseId: string}>;
     comparePassword: (password: string) => Promise<boolean>;
-    signAccessToken: () => string;
-    signRefreshToken: () => string;
+    SignAccessToken: () => string;
+    SignRefreshToken: () => string;
 };
 
 const userSchema: Schema<IUser> = new mongoose.Schema({
@@ -72,12 +72,12 @@ userSchema.pre<IUser>('save', async function (next) {
 });
 
 // sign access token
-userSchema.methods.signAccessToken = function () {
+userSchema.methods.SignAccessToken = function () {
     return jwt.sign({ id: this._id }, process.env.ACCESS_TOKEN || '');
 };
 
 // sign refresh token
-userSchema.methods.signRefreshToken = function () {
+userSchema.methods.SignRefreshToken = function () {
     return jwt.sign({ id: this._id }, process.env.REFRESH_TOKEN || '');
 };
 
