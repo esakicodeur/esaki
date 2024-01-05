@@ -18,7 +18,7 @@ export const layoutApi = apiSlice.injectEndpoints({
                     title,
                     subTitle,
                     faq,
-                    categories
+                    categories,
                 },
                 method: "PUT",
                 credentials: "include" as const,
