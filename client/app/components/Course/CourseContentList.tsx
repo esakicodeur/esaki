@@ -24,7 +24,7 @@ const CourseContentList: FC<Props> = (props) => {
     let totalCount: number = 0; // Total count of videos from previous sections
 
     const toggleSection = (section: string) => {
-        const newVisibleSections = new Set(videoSections);
+        const newVisibleSections = new Set(visibleSections);
 
         if (newVisibleSections.has(section)) {
             newVisibleSections.delete(section);
