@@ -78,49 +78,7 @@ const AllInvoices = ({ isDashboard }: Props) => {
         ),
     ];
 
-    const rows: any = [
-        // mock data for testing
-        {
-            id: "1234556777655",
-            userName: "Alex Esaki",
-            userEmail: "apachecordovax@gmail.com",
-            title: "React JS Course",
-            price: "$500",
-            created_at: "2 days ago"
-        },
-        {
-            id: "1234556777655",
-            userName: "Alex Esaki",
-            userEmail: "apachecordovax@gmail.com",
-            title: "React JS Course",
-            price: "$500",
-            created_at: "2 days ago"
-        },
-        {
-            id: "1234556777655",
-            userName: "Alex Esaki",
-            userEmail: "apachecordovax@gmail.com",
-            title: "React JS Course",
-            price: "$500",
-            created_at: "2 days ago"
-        },
-        {
-            id: "1234556777655",
-            userName: "Alex Esaki",
-            userEmail: "apachecordovax@gmail.com",
-            title: "React JS Course",
-            price: "$500",
-            created_at: "2 days ago"
-        },
-        {
-            id: "1234556777655",
-            userName: "Alex Esaki",
-            userEmail: "apachecordovax@gmail.com",
-            title: "React JS Course",
-            price: "$500",
-            created_at: "2 days ago"
-        }
-    ];
+    const rows: any = [];
 
     orderData && orderData.forEach((item: any) => {
         rows.push({

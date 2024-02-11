@@ -273,6 +273,7 @@ const CourseContentMedia = ({data, id, activeVideo, setActiveVideo, user, refetc
                             setAnswer={setAnswer}
                             handleAnswerSubmit={handleAnswerSubmit}
                             user={user}
+                            questionId={questionId}
                             setQuestionId={setQuestionId}
                             answerCreationLoading={answerCreationLoading}
                         />
@@ -375,7 +376,7 @@ const CourseContentMedia = ({data, id, activeVideo, setActiveVideo, user, refetc
                                         </span>
                                     )}
 
-                                    {isReviewReply && (
+                                    {isReviewReply && reviewId === item._id && (
                                         <div className='w-full flex relative'>
                                             <input
                                                 type='text'
@@ -436,6 +437,7 @@ const CommentReply = ({
     answer,
     setAnswer,
     handleAnswerSubmit,
+    questionId,
     setQuestionId,
     answerCreationLoading
 }: any) => {
@@ -452,6 +454,7 @@ const CommentReply = ({
                             index={index}
                             answer={answer}
                             setAnswer={setAnswer}
+                            questionId={questionId}
                             setQuestionId={setQuestionId}
                             handleAnswerSubmit={handleAnswerSubmit}
                             answerCreationLoading={answerCreationLoading}
@@ -464,6 +467,7 @@ const CommentReply = ({
 }
 
 const CommentItem = ({
+    questionId,
     setQuestionId,
     item,
     answer,
@@ -508,7 +512,7 @@ const CommentItem = ({
                     </span>
                 </div>
                 {
-                    replyActive && (
+                    replyActive && questionId === item._id && (
                         <>
                             {item.questionReplies.map((item: any, index: any) => (
                                 <div key={index} className='w-full flex 800px:ml-16 my-5 text-black dark:text-white'>

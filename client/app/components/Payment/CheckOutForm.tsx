@@ -49,10 +49,10 @@ const CheckOutForm = ({setOpen, data, user}: Props) => {
             setLoadUser(true);
             socketId.emit("notification", {
                 title: "New Order",
-                message: `You have a new order from ${data.course.name}`,
+                message: `You have a new order from ${orderData.course.name}`,
                 userId: user._id,
             });
-            redirect(`/course-access/${data._id}`);
+            redirect(`/course-access/${orderData._id}`);
         }
         if(error) {
             if("data" in error) {
